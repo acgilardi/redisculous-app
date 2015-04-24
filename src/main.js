@@ -1,8 +1,20 @@
 require.config({
-   paths: {
+    baseUrl: '.',
+    paths: {
+       'app': 'app',
        'jquery': 'vendor/jquery/jquery',
        'underscore': 'vendor/underscore/underscore',
        'backbone': 'vendor/backbone/backbone',
-       'marionette': 'vendor/backbone.marionette/backbone.marionette.js'
-   }
+       'backbone.wreqr': 'vendor/backbone.wreqr/backbone.wreqr',
+       'backbone.babysitter': 'vendor/backbone.babysitter/backbone.babysitter',
+       'marionette': 'vendor/backbone.marionette/backbone.marionette',
+    }
+});
+
+require([
+    'app'
+], function (
+    app
+) {
+    app.start();
 });
