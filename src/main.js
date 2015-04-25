@@ -1,7 +1,6 @@
 require.config({
-    baseUrl: '.',
+    baseUrl: 'assets/js',
     paths: {
-       'app': 'app',
        'jquery': 'vendor/jquery/jquery',
        'underscore': 'vendor/underscore/underscore',
        'backbone': 'vendor/backbone/backbone',
@@ -14,7 +13,8 @@ require.config({
 require([
     'app'
 ], function (
-    app
+    App
 ) {
-    app.start();
+    window.app = App;
+    App.start();
 });

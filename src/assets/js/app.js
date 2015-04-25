@@ -1,11 +1,9 @@
 define([
     'backbone',
-    'marionette',
-    'entities/contact'
+    'marionette'
 ], function (
     Backbone,
-    Marionette,
-    Contact
+    Marionette
 ) {
     'use strict';
 
@@ -20,15 +18,12 @@ define([
     });
 
     app.on('start', function() {
+        Backbone.history.start();
         console.log('started');
 
-        var contact = new Contact();
-        contact.set('firstName', 'bob');
-        console.log(contact);
-
-        var staticView = new app.StaticView(contact);
+        var staticView = new app.StaticView();
         app.mainRegion.show(staticView);
     });
 
-    return window.app = app;
+    return app;
 });

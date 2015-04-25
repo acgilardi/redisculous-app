@@ -1,11 +1,9 @@
-define([
-    'app'
-], function (
-    App
+define([], function (
+
 ) {
     'use strict';
 
-    App.module('Entities.Contact', function(Entities, App, Backbone, Marionette, $, _) {
+    app.module('Entities.Contact', function(Entities, app, Backbone, Marionette, $, _) {
         var Contact;
         Contact = Backbone.Model.extend({
             defaults: {

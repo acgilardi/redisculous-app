@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         bower: {
             install: {
                 options: {
-                    targetDir: 'src/vendor',
+                    targetDir: 'src/assets/js/vendor',
                     layout: 'byComponent'
                 }
             }
