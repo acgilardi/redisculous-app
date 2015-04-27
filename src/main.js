@@ -6,12 +6,20 @@ require.config({
        'backbone': 'vendor/backbone/backbone',
        'backbone.wreqr': 'vendor/backbone.wreqr/backbone.wreqr',
        'backbone.babysitter': 'vendor/backbone.babysitter/backbone.babysitter',
+       'localstorage': 'vendor/backbone.localstorage/backbone.localStorage',
        'marionette': 'vendor/backbone.marionette/backbone.marionette',
+        'text': "vendor/text/text"
+    },
+    shim: {
+        'underscore': {
+            exports: '_'
+        }
     }
 });
 
 require([
-    'app'
+    'app',
+    'apps/contacts/contacts_app_router'
 ], function (
     App
 ) {

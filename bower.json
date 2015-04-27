@@ -22,7 +22,14 @@
     "backbone.marionette": "~2.4.1",
     "underscore": "~1.8.3",
     "requirejs": "~2.1.17",
-    "bootstrap": "~3.3.4"
+    "bootstrap": "~3.3.4",
+    "backbone.localstorage": "~1.1.16",
+    "text": "~2.0.14"
+  },
+  "exportsOverride": {
+    "underscore-tpl": {
+      ".": "dist/underscore-tpl.js"
+    }
   },
   "resolutions": {
     "underscore": "~1.8.3"
