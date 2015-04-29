@@ -47,9 +47,13 @@ define(['marionette'], function (Marionette) {
         console.log('started');
         if(Backbone.history) {
             require(['apps/contacts/contacts_app'], function () {
-                Backbone.history.start();
+                Backbone.history.start({
+                    pushState: true,
+                    root: '/amweb/app/',
+                    silent: false
+                });
 
-                if(app.getCurrentRoute() === ""){
+                if(app.getCurrentRoute() === 'amweb/app/' || app.getCurrentRoute() === ''){
                     app.trigger("contacts:list");
                 }
             });
