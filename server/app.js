@@ -1,7 +1,9 @@
-var http = require("http");
+var http = require('http'),
+  port = process.env.PORT || 8080;
 
-http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("Hello World");
-  response.end();
-}).listen(80);
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('<h1>Bazinga!</h1>\n');
+}).listen(port, function() {
+  console.log('Server listening on port' + port + '...');
+});
