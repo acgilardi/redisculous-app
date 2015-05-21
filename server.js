@@ -8,6 +8,7 @@ var http = require('http'),
     //app.set('port', process.env.PORT || 8080);
     //app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
     //app.use(express.bodyParser())
+
     app.use(express.static(path.join(__dirname, 'build')));
 //});
 

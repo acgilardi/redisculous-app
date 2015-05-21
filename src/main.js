@@ -25,6 +25,6 @@ require([
     App
 ) {
     window.app = App;
-    window.appBase = '/amweb/app/';
+    window.appBase = '/';
     App.start();
 });
