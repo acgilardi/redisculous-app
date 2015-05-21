@@ -1,33 +1,13 @@
-var http = require('http'),
-    express = require('express'),
-    path = require('path'),
-    port = process.env.PORT || 8080,
-    app = express();
+var express = require('express')
+var app = express();
 
-//app.configure(function () {
-    //app.set('port', process.env.PORT || 8080);
-    //app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
-    //app.use(express.bodyParser())
+app.set('port', (process.env.PORT || 8080))
+app.use(express.static(__dirname + '/public'))
 
-    app.use(express.static(path.join(__dirname, '')));
-//});
+app.get('/', function(request, response) {
+    response.send('Hello World!')
+})
 
-//app.use(express.static(__dirname+'/folder_containing_assets_OR_scripts'));
-
-app.get('/', function(req, res){
-    res.sendfile(__dirname + '/index.html');
-});
-
-//app.get('/wines', function(req, res) {
-//    res.send([{name:'wine1'}, {name:'wine2'}]);
-//});
-
-app.listen(port);
-console.log('Server listening on port' + port + '...');
-
-//http.createServer(function (req, res) {
-//    res.writeHead(200, {'Content-Type': 'text/html'});
-//    res.end('<h1>Bazinga!</h1>\n');
-//}).listen(port, function () {
-//    console.log('Server listening on port' + port + '...');
-//});
+app.listen(app.get('port'), function() {
+    console.log("Node app is running at localhost:" + app.get('port'))
+})
