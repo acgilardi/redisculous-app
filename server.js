@@ -9,13 +9,13 @@ var http = require('http'),
     //app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
     //app.use(express.bodyParser())
 
-    app.use(express.static(path.join(__dirname, 'build')));
+    app.use(express.static(path.join(__dirname, 'app')));
 //});
 
 //app.use(express.static(__dirname+'/folder_containing_assets_OR_scripts'));
 
 app.get('/', function(req, res){
-    res.sendfile(__dirname + '/build/index.html');
+    res.sendfile(__dirname + '/app/index.html');
 });
 
 //app.get('/wines', function(req, res) {
