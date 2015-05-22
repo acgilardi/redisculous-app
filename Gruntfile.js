@@ -5,7 +5,7 @@ module.exports = function(grunt) {
             init: {
                 files: {
                     src: [ '**' ],
-                    dest: 'app/vendor/',
+                    dest: 'build/vendor/',
                     cwd: 'vendor',
                     expand: true
                 }
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
                 files: [
                     {
                         src: [ '**' ],
-                        dest: 'app/',
+                        dest: 'build/',
                         cwd: 'src',
                         expand: true
                     }
