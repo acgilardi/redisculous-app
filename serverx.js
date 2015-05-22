@@ -9,7 +9,7 @@ var http = require('http'),
     //app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
     //app.use(express.bodyParser())
 
-    app.use(express.static(path.join(__dirname, '')));
+    app.use(express.static(path.join(__dirname, '/build')));
 //});
 
 //app.use(express.static(__dirname+'/folder_containing_assets_OR_scripts'));
@@ -22,8 +22,12 @@ app.get('/', function(req, res){
 //    res.send([{name:'wine1'}, {name:'wine2'}]);
 //});
 
-app.listen(port);
-console.log('Server listening on port' + port + '...');
+app.listen(app.get('port'), function() {
+    console.log('Server listening on port' + port + '...');
+});
+
+//app.listen(port);
+//console.log('Server listening on port' + port + '...');
 
 //http.createServer(function (req, res) {
 //    res.writeHead(200, {'Content-Type': 'text/html'});
